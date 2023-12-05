@@ -34,18 +34,18 @@ with app.app_context():  # Вход в контекст приложения
         print(f"User ID: {user.id}, Name: {user.name}, Gender: {user.gender}, Age: {user.age}, Country: {user.country}, Sport: {user.sport}")
 
 
-@app.route('/')  # Определение маршрута для корневого URL
-def index():  # Определение функции для обработки запроса к корневому URL
+@app.route('/')  #Определение маршрута для корневого URL
+def index():  #Определение функции для обработки запроса к корневому URL
     return render_template('index.html')  # Возвращает шаблон index.html
 
-@app.route('/contacts')  # Определение маршрута для URL /contacts/
-def contacts():  # Определение функции для обработки запроса к URL /contacts/
+@app.route('/contacts')  #Определение маршрута для URL /contacts/
+def contacts():  #Определение функции для обработки запроса к URL /contacts/
     return render_template('contacts.html')  # Возвращает шаблон contacts.html
 
-@app.route('/users/') # Определение маршрута для URL /users/
-def users(): # Определение функции для обработки запроса к URL /contacts/
+@app.route('/users/') #Определение маршрута для URL /users/
+def users(): #Определение функции для обработки запроса к URL /contacts/
     users = User.query.all() #Получение всех записей из таблицы (класса) Users
     return render_template('users.html', users=users) #передача списка пользователей в HTML
 
-if __name__ == '__main__':  # Если код запускается напрямую
-    app.run(debug=True)  # Запуск приложения
+if __name__ == '__main__':  #Если код запускается напрямую
+    app.run(debug=True)  #Запуск приложения
